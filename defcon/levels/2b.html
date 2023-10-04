@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!-- META DATA -->
+    <meta charset="utf-8">
+    <meta name="viewport" value="width=device-width, initial-scale=1">
+    <title>DEFCON</title>
+
+    <!-- CSS IMPORTS -->
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+<body>
+    <div id="container" class="parallax-window" data-parallax="scroll" data-image-src="../res/img/bg-levels/bg-fog.jpg">
+        <!-- === CANVAS
+        === -->
+        <div id="canvas">
+            <div id="canvas-wrapper">
+                <div id="canvas-header">
+                    <span id="header-title">Dia <span id="title-day">II</span> - Temos visita?</span>
+                    <div id="header-date-container"><span id="header-date">13/12/2015</span></div>
+                </div><!-- header -->
+                <div id="canvas-body">
+                    <div id="body-entries">
+                        <div class="entry">
+                            <span class="entry-title">Entrada I - 10:22am</span>
+                            <p class="entry-text">
+                                Liguei para o pessoal, Caroline me disse que eles não poderiam vir, pois as estradas que levam até a área do pântano estão bloqueadas... me pergunto se isso tem algo a ver com a neblina que vi ontem, a final, não é a primeira vez que o pântano libera substancias toxicas. De qualquer forma, consegui coletar vestígios da névoa, não estão puros, o que deve dificultar bastante minha investigação 
+                            </p>
+                        </div><!-- entry -->
+                        <div class="entry">
+                            <span class="entry-title">Entrada II - 03:34pm</span>
+                            <p class="entry-text">
+                                Algo está diferente, hoje a névoa parece estar se espalhando mais rapidamente, normalmente, as bizarrices do pântano não vão tão longe. De qualquer maneira, já fiz praticamente tudo, acredito ter descoberto como a neblina se formou, só preciso balancear os compostos para que os reagentes entrem em equilíbrio com os produtos.
+                            </p>
+                            <span class="equation">
+                                <span contenteditable class="index">?</span>C2H4O + 5O<span contenteditable class="index">?</span> -> <span contenteditable class="index">?</span>CO2 + 4H2O
+                            </span>
+                            <br>
+                            (Clique sobre as "?" para prencher com os valores corretos)
+                        </div><!-- entry -->
+                        <div class="entry">
+                            <span class="entry-title">Entrada III - 9:05pm</span>
+                            <p class="entry-text">
+                                Passei o dia todo pensando sobre o que Caroline me disse, como eu disse, esse tipo de coisa é comum por aqui, mas ninguém nunca restringiu o acesso à área. Além disso, hoje à tarde, haviam três helicópteros do governo sobrevoando o pântano. Estou começando a me preocupar com a possibilidade de algo realmente perigoso estar acontecendo. 
+                            </p>
+                        </div><!-- entry -->
+                    </div><!-- entries -->
+                    <div id="body-options">
+                        <ul id="options">
+                            <li class="option">
+                                <a onclick="check(0)">Pesquisar sobre a névoa.</a>
+                            </li>
+                            <li class="option">
+                                <a onclick="check(1)">Realizar novos experimentos no composto.</a>
+                            </li>
+                        </ul>
+                    </div><!-- options -->
+                </div><!-- body -->
+            </div><!-- /canvas wrapper -->
+        </div><!-- /canvas -->
+    </div><!-- /container -->
+
+    <!-- === IMPORT SCRIPTS
+    === -->
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/parallax/parallax.js"></script>
+    <script>
+        function check(option){
+            const answer = [2, 2, 4]
+            var correct = true
+
+            $('.index').each((index, value) => {
+                if(answer[index] != value.innerHTML) correct = false
+            })
+
+            if(correct){
+                if(option == 0){
+                    window.location = './3a.html'
+                }else{
+                    window.location = './3b.html'
+                }
+            }else{
+                if(option == 0){
+                    window.location = './3c.html'
+                }else{
+                    window.location = './3bd.html'
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>

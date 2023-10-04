@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!-- META DATA -->
+    <meta charset="utf-8">
+    <meta name="viewport" value="width=device-width, initial-scale=1">
+    <title>DEFCON</title>
+
+    <!-- CSS IMPORTS -->
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+<body>
+    <div id="container" class="parallax-window" data-parallax="scroll" data-image-src="../res/img/bg-levels/bg-fog.jpg">
+        <!-- === CANVAS
+        === -->
+        <div id="canvas">
+            <div id="canvas-wrapper">
+                <div id="canvas-header">
+                    <span id="header-title">Dia <span id="title-day">II</span> - Temos visita?</span>
+                    <div id="header-date-container"><span id="header-date">12/12/2015</span></div>
+                </div><!-- header -->
+                <div id="canvas-body">
+                    <div id="body-entries">
+                        <div class="entry">
+                            <span class="entry-title">Entrada I - 10:22am</span>
+                            <p class="entry-text">
+                                    Hoje foi um dos raros dias em que eu consegui dormir até um pouco mais tarde. Passei a noite em claro analisando as amostras que coletei. Acho que fiz algum progresso, talvez os outros possam me ajudar mais tarde quando chegarem.
+                            </p>
+                        </div><!-- entry -->
+                        <div class="entry">
+                            <span class="entry-title">Entrada II - 03:34pm</span>
+                            <p class="entry-text">
+                                    Estou cansado de esperar, eles provavelmente não virão hoje, amanhã voltarei a trabalhar, então poderei usar o telefone do escritório para tentar entrar em contato. De qualquer maneira, já fiz praticamente tudo, acredito ter descoberto como a neblina se formou, só preciso balancear os compostos para que os reagentes entrem em equilíbrio com os produtos.
+                            </p>
+                            <span class="equation">
+                                Mg + <span contenteditable class="index">?</span>HCL -> MgCl<span contenteditable class="index">?</span> + H2
+                            </span>
+                            <br>
+                            (Clique sobre as "?" para prencher com os valores corretos)
+                        </div><!-- entry -->
+                        <div class="entry">
+                                <span class="entry-title">Entrada III - 9:05pm</span>
+                                <p class="entry-text">
+                                        Se tudo correr como o planejado, em breve poderei conter, ou ate mesmo reverter os danos causados pela névoa. A única coisa que me preocupa, é ninguém ter chegado ainda, sem ninguém para conversar ou interagir, sinto a paranoia tomando conta de mim pouco a pouco.
+                                </p>
+                            </div><!-- entry -->
+                    </div><!-- entries -->
+                    <div id="body-options">
+                        <ul id="options">
+                            <li class="option">
+                                <a onclick="check(0)">Pesquisar sobre a névoa.</a>
+                            </li>
+                            <li class="option">
+                                <a onclick="check(1)">Realizar novos experimentos no composto.</a>
+                            </li>
+                        </ul>
+                    </div><!-- options -->
+                </div><!-- body -->
+            </div><!-- /canvas wrapper -->
+        </div><!-- /canvas -->
+    </div><!-- /container -->
+
+    <!-- === IMPORT SCRIPTS
+    === -->
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/parallax/parallax.js"></script>
+    <script>
+        function check(option){
+            const answer = [2, 2]
+            var correct = true
+
+            $('.index').each((index, value) => {
+                if(answer[index] != value.innerHTML) correct = false
+            })
+
+            if(correct){
+                if(option == 0){
+                    window.location = './3a.html'
+                }else{
+                    window.location = './3b.html'
+                }
+            }else{
+                if(option == 0){
+                    window.location = './3c.html'
+                }else{
+                    window.location = './3ad.html'
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
